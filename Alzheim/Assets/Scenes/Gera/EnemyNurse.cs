@@ -18,7 +18,6 @@ public class EnemyNurse : MonoBehaviour
 
     [Header("Proyectil")]
     //Proyectil
-    public GameObject weapon;
     public GameObject start_Proyectil;
     public GameObject prefab_Proyectil;
     public float speed_Proyectil;
@@ -27,7 +26,7 @@ public class EnemyNurse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        FollowPlayer();
     }
 
     private void FollowPlayer()
@@ -39,7 +38,7 @@ public class EnemyNurse : MonoBehaviour
         //Buscalo y encuentralo
         if(_distanceToPlayer > _attackRange)
         {
-            transform.Translate(Vector3.forward * _speed / 2);
+            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }//Si está a rango dispara
         else
         {
@@ -68,6 +67,7 @@ public class EnemyNurse : MonoBehaviour
         float rotateAmount = Vector3.Cross(playerDirection, transform.forward).y;
         rb.angularVelocity = -Vector3.Cross(playerDirection, transform.forward) * rotatespeed;
         rb.velocity = transform.forward * speed_Proyectil;
+        rb.AddForce(transform.forward * speed_Proyectil);
 
         // rb.transform.LookAt(player_Position);
         //Agregar fuerza a la bala
