@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5553836969295897499}
   - component: {fileID: 5553836969295897498}
   - component: {fileID: 5553836969295897497}
-  - component: {fileID: 5553836969295897496}
   - component: {fileID: 5553836969295897479}
+  - component: {fileID: 8306367327829581715}
   m_Layer: 0
   m_Name: Transforme
   m_TagString: Untagged
@@ -85,22 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!70 &5553836969295897496
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5553836969295897478}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &5553836969295897479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +105,18 @@ MonoBehaviour:
   _newCooldownAttack: 1
   _isFirstClass: 0
   _newClasses: []
+  _2ndClassesposition: []
+--- !u!136 &8306367327829581715
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553836969295897478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

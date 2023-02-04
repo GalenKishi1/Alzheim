@@ -39,9 +39,4 @@ public class ClassPrincipal : MonoBehaviour
             print(this.gameObject.name);
         }
     }
-    
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }*/
 }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2563387538450309994}
   - component: {fileID: 2563387538450309995}
   - component: {fileID: 2563387538450309992}
-  - component: {fileID: 2563387538450309993}
   - component: {fileID: 2563387538450310006}
+  - component: {fileID: -6584229737166711335}
   m_Layer: 0
   m_Name: Karateka
   m_TagString: Untagged
@@ -85,22 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!70 &2563387538450309993
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2563387538450310007}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &2563387538450310006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +105,18 @@ MonoBehaviour:
   _newCooldownAttack: 0.5
   _isFirstClass: 0
   _newClasses: []
+  _2ndClassesposition: []
+--- !u!136 &-6584229737166711335
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563387538450310007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

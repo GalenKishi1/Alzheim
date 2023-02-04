@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8125865535539411876}
   - component: {fileID: 8125865535539411877}
   - component: {fileID: 8125865535539411878}
-  - component: {fileID: 8125865535539411879}
   - component: {fileID: 8125865535539411896}
+  - component: {fileID: 6496327392587710473}
   m_Layer: 0
   m_Name: Carro
   m_TagString: Untagged
@@ -85,22 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!70 &8125865535539411879
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8125865535539411897}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &8125865535539411896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +105,18 @@ MonoBehaviour:
   _newCooldownAttack: 3
   _isFirstClass: 0
   _newClasses: []
+  _2ndClassesposition: []
+--- !u!136 &6496327392587710473
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125865535539411897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

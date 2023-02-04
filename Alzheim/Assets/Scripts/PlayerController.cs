@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
 
-            rigidbody.velocity = direction * movementSpeed;
+            rigidbody.velocity = direction * movementSpeed ;
         }
     }
 }

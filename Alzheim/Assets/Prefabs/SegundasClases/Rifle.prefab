@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8351845289899492138}
   - component: {fileID: 8351845289899492139}
   - component: {fileID: 8351845289899492136}
-  - component: {fileID: 8351845289899492137}
   - component: {fileID: 8351845289899492150}
   - component: {fileID: 5173355109691647180}
+  - component: {fileID: 1751117402862036891}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -86,22 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!70 &8351845289899492137
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8351845289899492151}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &8351845289899492150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +106,7 @@ MonoBehaviour:
   _newCooldownAttack: 0.5
   _isFirstClass: 0
   _newClasses: []
+  _2ndClassesposition: []
 --- !u!114 &5173355109691647180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +127,18 @@ MonoBehaviour:
   _newCooldownAttack: -2.9
   _isFirstClass: 0
   _newClasses: []
+  _2ndClassesposition: []
+--- !u!136 &1751117402862036891
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351845289899492151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
