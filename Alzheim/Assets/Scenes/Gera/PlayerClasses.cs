@@ -6,7 +6,8 @@ public class PlayerClasses : MonoBehaviour
 {
     //Stats del jugador
     //public enum PlayerClass {}
-    public int _life, _attack, _rangeAttack, _cooldownAttack, _speedMovement;
+    public int _life, _attack, _rangeAttack, _speedMovement;
+    public float _cooldownAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,8 @@ public class PlayerClasses : MonoBehaviour
         {
             //Boxeador
             case 1:
+                _attack = +2;
+                _cooldownAttack -= 0.5f;
                 break;
             //Karateka
             case 2:
@@ -70,7 +73,7 @@ public class PlayerClasses : MonoBehaviour
             //Carro
             case 5:
                 break;
-            //TRasnformer
+            //Trasnformer
             case 6:
                 break;
         }
