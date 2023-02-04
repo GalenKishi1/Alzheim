@@ -4,50 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
+    private new Rigidbody rigidbody;
+    public float movementSpeed;
 
-    private float HorizontalMovement = 0f;
-    [SerializeField] private float MovementVelocity;
-    [Range(0, 0.3f)] [SerializeField] private float Movementsmoothing;
-    private Vector3 velocity = Vector3.zero;
-    private bool LookingRight = true;
-
-
-    private void Start()
+    void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    void Update()
     {
-        HorizontalMovement = Input.GetAxisRaw("Horizontal") * MovementVelocity;
-    }
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
 
-    private void FixedUpdate()
-    {
-        Move(HorizontalMovement * Time.fixedDeltaTime);
-    }
-
-    private void Move(float move)
-    {
-        Vector3 SpeedTarget = new Vector2(move, rb2D.velocity.y);
-        rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, SpeedTarget, ref velocity, Movementsmoothing);
-
-        if(move>0 && !LookingRight)
+        if (hor != 0 || ver != 0)
         {
-            Spin();
-        }
-        else if(move<0&&LookingRight)
-        {
-            Spin();
-        }
-    }
+            Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
 
-    private void Spin()
-    {
-        LookingRight = !LookingRight;
-        Vector3 escale = transform.localScale;
-        escale.x *= -1;
-        transform.localScale = escale;
+            rigidbody.velocity = direction * movementSpeed;
+        }
     }
 }
