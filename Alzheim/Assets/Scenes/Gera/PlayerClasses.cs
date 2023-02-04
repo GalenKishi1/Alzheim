@@ -12,7 +12,7 @@ public class PlayerClasses : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EstadisticasBase();
+        //EstadisticasBase();
     }
 
 
