@@ -11,6 +11,7 @@ public class DogBoss : MonoBehaviour
     public float walkPointRange;
     public GameObject projectile;
     public float health;
+    private Vector3 directionForwardRay;
 
     //patrolling
     public float timeBeweenAttacks;
@@ -31,13 +32,18 @@ public class DogBoss : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        Ray rayhit;
+
+        
 
         if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && !playerInAttackRange) AttackPlayer();
 
+        directionForwardRay = raycas
 
     }
+
     private void Patrolling()
     {
         if (!walkPointSet) SearchWalkPoint();
@@ -55,7 +61,7 @@ public class DogBoss : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        if (Physics.Raycast(walkPoint, -transform.up, 1f, whatIsGround))
         {
             walkPointSet = true;
         }
@@ -105,19 +111,6 @@ public class DogBoss : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("WhatIsWall"))
-        {
-            StartCoroutine(PauseToCollision());
-        }
-    }
-
-    IEnumerator PauseToCollision()
-    {
-        Debug.Log("Collisione");
-        yield return new WaitForSeconds(waitToPatrol);
-        Patrolling();
-    }
+    
     
 }
