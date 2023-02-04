@@ -11,7 +11,6 @@ public class DogBoss : MonoBehaviour
     public float walkPointRange;
     public GameObject projectile;
     public float health;
-    private Vector3 directionForwardRay;
 
     //patrolling
     public float timeBeweenAttacks;
@@ -34,13 +33,12 @@ public class DogBoss : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         Ray rayhit;
 
-        
+        Vector3 directionForwardRay = transform.TransformDirection(Vector3.forward);
 
         if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && !playerInAttackRange) AttackPlayer();
 
-        directionForwardRay = raycas
 
     }
 
