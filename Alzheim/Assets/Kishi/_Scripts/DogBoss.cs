@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
 
 public class DogBoss : MonoBehaviour
 {
@@ -31,15 +30,10 @@ public class DogBoss : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        Ray rayhit;
-
-        Vector3 directionForwardRay = transform.TransformDirection(Vector3.forward);
 
         if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && !playerInAttackRange) AttackPlayer();
-
-
     }
 
     private void Patrolling()
@@ -90,7 +84,8 @@ public class DogBoss : MonoBehaviour
         alredyAttacked = false;
     }
 
-    private void TakeDamage(int damage)
+
+    public void TakeDamage(int damage)
     {
         health = -damage;
         if (health < 0) Invoke(nameof(DestroyEnemy),0.5f);
@@ -108,7 +103,4 @@ public class DogBoss : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
-
-    
-    
 }
