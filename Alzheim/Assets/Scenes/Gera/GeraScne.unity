@@ -1167,15 +1167,15 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Theme
-    clip: {fileID: 8300000, guid: ba3ab016740f8344982e5bfe7fd97a2a, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: ecf297db39c5bf644848b9413c748594, type: 3}
+    volume: 0.154
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: DeadEnemy
     clip: {fileID: 8300000, guid: fb72df40fcd40364ead1b54da906efca, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 3
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1220295830
