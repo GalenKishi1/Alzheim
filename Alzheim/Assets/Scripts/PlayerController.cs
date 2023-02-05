@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
+    PlayerClasses playerClases;
     private new Rigidbody rigidbody;
     public float movementSpeed;
 
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
 
-            rigidbody.velocity = direction * movementSpeed;
+            rigidbody.velocity = direction * movementSpeed ;
         }
     }
 }

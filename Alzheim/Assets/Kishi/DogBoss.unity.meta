@@ -1,10 +1,10 @@
 fileFormatVersion: 2
 <<<<<<<< HEAD:Alzheim/Assets/Scenes/Gera.meta
-guid: 28e2ac1a88fb2214c8d585df910a37d6
-========
-guid: 0e7f836699db5a748a18d1c2375410f9
->>>>>>>> Felipe_Branch:Alzheim/Assets/Materials.meta
+guid: e9ba7c108e4992147affb360f6f667a3
 folderAsset: yes
+========
+guid: e2a02029a4d11884bb30ded1cab0cf57
+>>>>>>>> Kishi:Alzheim/Assets/Kishi/DogBoss.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
