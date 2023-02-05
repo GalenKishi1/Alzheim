@@ -26,7 +26,7 @@ public class CameraEffect : MonoBehaviour
         {
             _roomToDissapear.SetActive(false);
             _roomToAppear.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("SFX_Door");
 
         }
     }

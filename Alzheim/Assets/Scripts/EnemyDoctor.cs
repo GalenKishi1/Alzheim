@@ -9,6 +9,7 @@ public class EnemyDoctor : MonoBehaviour
     public float chronometer;
     public Quaternion angle;
     public float grade;
+    public float _enemyLife;
 
     void Start()
     {
@@ -56,4 +57,6 @@ public class EnemyDoctor : MonoBehaviour
             transform.Translate(Vector3.forward * 5 * Time.deltaTime);
         }
     }
+
+    
 }

@@ -32,6 +32,7 @@ public class EnemyNurse : MonoBehaviour
     private void FollowPlayer()
     {
         transform.LookAt(_player.transform.position);
+        //transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
 
         //Verificar distacia entre el enemigo y el jugador
         float _distanceToPlayer = Vector3.Distance(_player.transform.position, this.gameObject.transform.position);
@@ -73,7 +74,7 @@ public class EnemyNurse : MonoBehaviour
         //Agregar fuerza a la bala
         //rb.AddForce(transform.forward  * speed_Proyectil);
 
-        Destroy(_tempProyectil, 5.0f);
+        Destroy(_tempProyectil, 4.0f);
 
         // player.GetComponent<Renderer>().material.SetColor("_Color",Color.red);
         print("Lanzar proyectil");

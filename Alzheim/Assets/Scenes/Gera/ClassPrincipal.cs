@@ -12,14 +12,17 @@ public class ClassPrincipal : MonoBehaviour
     [Header("Clases")]
     [SerializeField] private bool _isFirstClass;
     [SerializeField] private GameObject[] _newClasses;
+    [SerializeField] private GameObject[] _otherClasses;
     [SerializeField] private GameObject[] _2ndClassesposition;
+    [SerializeField] private GameObject _theOther2ndClass;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            print("ToqueClase");
             PlayerClasses _playerClasses = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClasses>();
-            //_playerClasses.UpdatePlayerClassValue(indexClass);
+            _playerClasses.UpdateSecondPlayerClassValue(indexClass);
             //._playerClasses._life =+ _newLife;
             _playerClasses._attack += _newattack;
             _playerClasses._rangeAttack += _newrangeAttack;
@@ -28,13 +31,26 @@ public class ClassPrincipal : MonoBehaviour
 
             if (_isFirstClass == true)
             {
+                FindObjectOfType<AudioManager>().Play("SFX_Class");
                 GameObject go = Instantiate(_newClasses[0]);
                 go.transform.position = _2ndClassesposition[0].transform.position;
                 GameObject go1 = Instantiate(_newClasses[1]);
                 go1.transform.position = _2ndClassesposition[1].transform.position;
-            }
 
-            Destroy(this.gameObject);
+                Destroy(_otherClasses[0]);
+                Destroy(_otherClasses[1]);
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_Class");
+                GameObject[] _go = GameObject.FindGameObjectsWithTag("Class");
+                for (int i = 0; i < _go.Length; i++)
+                {
+                    Destroy(_go[i], 0.1f);
+                }
+            }
+            
+            Destroy(this.gameObject,2f);
             
             print(this.gameObject.name);
         }

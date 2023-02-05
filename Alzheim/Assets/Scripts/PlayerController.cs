@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public GameObject _hit;
     public bool _canHit;
+    public float _rotationSpeed;
+    public SpriteRenderer _viejito;
+    public Sprite[] _spritesViejito;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        FindObjectOfType<AudioManager>().Play("MusicGameplay");
     }
 
     void Update()
@@ -21,12 +25,35 @@ public class PlayerController : MonoBehaviour
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");
 
-        if(hor != 0 || ver != 0)
-        {
-            Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
+        Vector3 _movementdirection = new Vector3 (hor,0,ver);
+        _movementdirection.Normalize();
 
-            rigidbody.velocity = direction * movementSpeed ;
+        transform.Translate(_movementdirection * playerClases._speedMovement * Time.deltaTime, Space.World);
+        /*if(hor <= 0 && ver <=0)
+        {
+            _viejito.flipX = true;
+            _viejito.flipY = false;
         }
+        else if(hor > 0 && ver <= 0)
+        {
+            _viejito.flipX = false;
+            _viejito.flipY = false;
+        }
+        if(ver >= 0 && hor < 0)
+        {
+            _viejito.flipY = true;
+        }
+        else if(ver >= 0 && hor > 0)
+        {
+            _viejito.flipY = false;
+        }*/
+        //Rotar jugador
+        if(_movementdirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(_movementdirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, _rotationSpeed * Time.deltaTime);
+        }
+
 
         if(_canHit == false)
         {

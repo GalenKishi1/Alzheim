@@ -8,6 +8,8 @@ public class PlayerClasses : MonoBehaviour
     //public enum PlayerClass {}
     public int _life, _attack, _rangeAttack, _speedMovement;
     public float _cooldownAttack, _mainCooldownAttack;
+    public SpriteRenderer _spriteRenderer;
+    public PlayerController _playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -58,23 +60,35 @@ public class PlayerClasses : MonoBehaviour
         {
             //Boxeador
             case 1:
-                _attack = +2;
-                _cooldownAttack -= 0.5f;
+                _playerController._viejito.sprite = _playerController._spritesViejito[0];
                 break;
             //Karateka
             case 2:
+                _playerController._viejito.sprite = _playerController._spritesViejito[1];
                 break;
             //Samurai
             case 3:
+                _playerController._viejito.sprite = _playerController._spritesViejito[2];
                 break;
             //Rifle
             case 4:
+                _playerController._viejito.sprite = _playerController._spritesViejito[3];
                 break;
             //Carro
             case 5:
+                _playerController._viejito.sprite = _playerController._spritesViejito[4];
                 break;
             //Trasnformer
             case 6:
+                _playerController._viejito.sprite = _playerController._spritesViejito[5];
+                break;
+                //Silla
+            case 7:
+                _playerController._viejito.sprite = _playerController._spritesViejito[6];
+                break;
+                //Baston
+            case 8:
+                _playerController._viejito.sprite = _playerController._spritesViejito[7];
                 break;
         }
     }
