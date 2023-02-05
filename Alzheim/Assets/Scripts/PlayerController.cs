@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool _canHit;
     public float _rotationSpeed;
     public SpriteRenderer _viejito;
+    public Sprite[] _spritesViejito;
 
     void Start()
     {

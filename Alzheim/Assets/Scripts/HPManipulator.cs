@@ -8,6 +8,7 @@ public class HPManipulator : MonoBehaviour
     public int amount;
     public float damageTime;
     float currentDamageTime;
+   public bool _imABullet;
 
     void Start()
     {
@@ -25,6 +26,12 @@ public class HPManipulator : MonoBehaviour
                 HPplayer.HP += amount;
                 currentDamageTime = 0.0f;
             }
+        }
+        if(other.tag == "Player" && _imABullet == true)
+        {
+
+            HPplayer.HP += amount;
+            Destroy(this.gameObject);
         }
     }
 }

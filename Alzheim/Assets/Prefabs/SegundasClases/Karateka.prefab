@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6730838558907317602}
   m_Layer: 0
   m_Name: Karateka
-  m_TagString: Untagged
+  m_TagString: Class
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e83365ab611e554593653e2be1c4fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexClass: 0
+  indexClass: 2
   _newLife: 0
   _newattack: 2
   _newrangeAttack: 2
@@ -56,6 +56,7 @@ MonoBehaviour:
   _newClasses: []
   _otherClasses: []
   _2ndClassesposition: []
+  _theOther2ndClass: {fileID: 0}
 --- !u!136 &-6584229737166711335
 CapsuleCollider:
   m_ObjectHideFlags: 0

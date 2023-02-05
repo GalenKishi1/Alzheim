@@ -11,6 +11,7 @@ TagManager:
   - NoMask
   - EnemyDoctor
   - Gun
+  - Class
   layers:
   - Default
   - TransparentFX

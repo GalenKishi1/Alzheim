@@ -14,6 +14,7 @@ public class ClassPrincipal : MonoBehaviour
     [SerializeField] private GameObject[] _newClasses;
     [SerializeField] private GameObject[] _otherClasses;
     [SerializeField] private GameObject[] _2ndClassesposition;
+    [SerializeField] private GameObject _theOther2ndClass;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +22,7 @@ public class ClassPrincipal : MonoBehaviour
         {
             print("ToqueClase");
             PlayerClasses _playerClasses = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClasses>();
-            //_playerClasses.UpdatePlayerClassValue(indexClass);
+            _playerClasses.UpdateSecondPlayerClassValue(indexClass);
             //._playerClasses._life =+ _newLife;
             _playerClasses._attack += _newattack;
             _playerClasses._rangeAttack += _newrangeAttack;
@@ -38,7 +39,12 @@ public class ClassPrincipal : MonoBehaviour
                 Destroy(_otherClasses[0]);
                 Destroy(_otherClasses[1]);
             }
-
+            else
+            {
+                _theOther2ndClass = GameObject.FindGameObjectWithTag("Class");
+                Destroy(_theOther2ndClass);
+            }
+            
             Destroy(this.gameObject);
             
             print(this.gameObject.name);

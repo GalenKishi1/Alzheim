@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3257725700203794157}
   m_Layer: 0
   m_Name: Rifle
-  m_TagString: Untagged
+  m_TagString: Class
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e83365ab611e554593653e2be1c4fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexClass: 0
+  indexClass: 4
   _newLife: 0
   _newattack: 2
   _newrangeAttack: 2
@@ -57,6 +57,7 @@ MonoBehaviour:
   _newClasses: []
   _otherClasses: []
   _2ndClassesposition: []
+  _theOther2ndClass: {fileID: 0}
 --- !u!114 &5173355109691647180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,12 +74,14 @@ MonoBehaviour:
   _newLife: 0
   _newattack: -4
   _newrangeAttack: 0
-  _newspeedMovement: -5
+  _newspeedMovement: -3
   _newCooldownAttack: -2.9
   _isFirstClass: 0
   _newClasses: []
   _otherClasses: []
   _2ndClassesposition: []
+  _theOther2ndClass: {fileID: 5157602649463352551, guid: 953154a31bb7142409e97ebb9949f1cb,
+    type: 3}
 --- !u!136 &1751117402862036891
 CapsuleCollider:
   m_ObjectHideFlags: 0
