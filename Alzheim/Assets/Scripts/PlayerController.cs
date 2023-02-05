@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
+    PlayerClasses playerClases;
     private new Rigidbody rigidbody;
     public float movementSpeed;
 
