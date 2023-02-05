@@ -20,5 +20,9 @@ public class PlayerHP : MonoBehaviour
             SceneManager.LoadScene(1);
             Destroy(gameObject);
         }
+        if (HP <= 0)
+        {
+            FindObjectOfType<AudioManager>().Play("OldMan dead");
+        }
     }
 }

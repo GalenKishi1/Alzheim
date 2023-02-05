@@ -18,5 +18,10 @@ public class EnemyHP : MonoBehaviour
     public void Quitarvida(float Damage)
     {
         HP = HP - Damage;
+        if (HP <= 0)
+        {
+            FindObjectOfType<AudioManager>().Play("DeadEnemy");
+        }
     }
+
 }
