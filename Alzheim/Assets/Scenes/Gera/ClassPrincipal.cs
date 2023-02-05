@@ -50,7 +50,7 @@ public class ClassPrincipal : MonoBehaviour
                 }
             }
             
-            Destroy(this.gameObject,2f);
+            Destroy(this.gameObject,0.5f);
             
             print(this.gameObject.name);
         }
