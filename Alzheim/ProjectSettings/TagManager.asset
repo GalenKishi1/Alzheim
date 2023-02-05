@@ -9,7 +9,7 @@ TagManager:
   - Enemy
   - World
   - NoMask
-  - WhatIsWall
+  - EnemyDoctor
   layers:
   - Default
   - TransparentFX
@@ -34,11 +34,11 @@ TagManager:
   - Camera2
   - Camera3
   - Camera4
-  - WhatIsGround
-  - WhatIsWall
-  - WhatIsLadder
-  - WhatIsEnemy
-  - WhatIsPlayer
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

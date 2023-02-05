@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8333981044517650098}
   - component: {fileID: 6511119080297011022}
   - component: {fileID: 6297901057655911921}
+  - component: {fileID: 2192163078163003200}
+  - component: {fileID: -2512186274368988714}
   m_Layer: 0
   m_Name: NurseBullet
   m_TagString: Untagged
@@ -114,3 +116,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!135 &2192163078163003200
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450609102817890633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2512186274368988714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450609102817890633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6185c1aab089734697abce7e3821c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: -10
+  damageTime: 0.3
