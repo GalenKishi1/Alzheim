@@ -15,4 +15,8 @@ public class EnemyHP : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void Quitarvida(float Damage)
+    {
+        HP = HP - Damage;
+    }
 }
