@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public GameObject _hit;
     public bool _canHit;
+    public float _rotationSpeed;
 
     void Start()
     {
@@ -21,12 +22,18 @@ public class PlayerController : MonoBehaviour
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");
 
-        if(hor != 0 || ver != 0)
-        {
-            Vector3 direction = (transform.forward * ver + transform.right * hor).normalized;
+        Vector3 _movementdirection = new Vector3 (hor,0,ver);
+        _movementdirection.Normalize();
 
-            rigidbody.velocity = direction * movementSpeed ;
+        transform.Translate(_movementdirection * playerClases._speedMovement * Time.deltaTime, Space.World);
+        
+        //Rotar jugador
+        if(_movementdirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(_movementdirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, _rotationSpeed * Time.deltaTime);
         }
+
 
         if(_canHit == false)
         {

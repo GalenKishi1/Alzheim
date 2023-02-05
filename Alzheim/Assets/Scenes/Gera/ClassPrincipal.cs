@@ -18,6 +18,7 @@ public class ClassPrincipal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            print("ToqueClase");
             PlayerClasses _playerClasses = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClasses>();
             //_playerClasses.UpdatePlayerClassValue(indexClass);
             //._playerClasses._life =+ _newLife;
