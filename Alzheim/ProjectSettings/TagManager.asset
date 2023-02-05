@@ -10,6 +10,7 @@ TagManager:
   - World
   - NoMask
   - EnemyDoctor
+  - Gun
   layers:
   - Default
   - TransparentFX
