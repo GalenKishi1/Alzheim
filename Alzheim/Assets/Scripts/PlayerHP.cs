@@ -18,5 +18,9 @@ public class PlayerHP : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (HP <= 0)
+        {
+            FindObjectOfType<AudioManager>().Play("OldMan dead");
+        }
     }
 }
