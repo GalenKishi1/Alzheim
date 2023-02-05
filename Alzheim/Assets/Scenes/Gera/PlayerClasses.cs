@@ -7,7 +7,7 @@ public class PlayerClasses : MonoBehaviour
     //Stats del jugador
     //public enum PlayerClass {}
     public int _life, _attack, _rangeAttack, _speedMovement;
-    public float _cooldownAttack;
+    public float _cooldownAttack, _mainCooldownAttack;
 
     // Start is called before the first frame update
     void Start()
