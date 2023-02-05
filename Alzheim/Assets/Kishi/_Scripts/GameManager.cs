@@ -31,12 +31,16 @@ public class GameManager : MonoBehaviour
 
     public void Credits_Button()
     {
+        FindObjectOfType<AudioManager>().StopSound("MusicMenu");
+        FindObjectOfType<AudioManager>().Play("MusicCredits");
         creditsPlus.gameObject.SetActive(true);
     }
 
     public void Quit_Credits()
     {
-        animatorCloseCredits.SetBool("PassToClose",true);
+        FindObjectOfType<AudioManager>().Play("MusicMenu");
+        FindObjectOfType<AudioManager>().StopSound("MusicCredits");
+        //animatorCloseCredits.SetBool("PassToClose",true);
         StartCoroutine(JustExitCooldown());
 
     }
