@@ -20,6 +20,7 @@ public class HPManipulator : MonoBehaviour
         if (other.tag == "Player")
         {
             print("pegue");
+            FindObjectOfType<AudioManager>().Play("SFX_Enfermera");
             currentDamageTime += Time.deltaTime;
             if (currentDamageTime > damageTime)
             {
@@ -29,7 +30,7 @@ public class HPManipulator : MonoBehaviour
         }
         if(other.tag == "Player" && _imABullet == true)
         {
-
+            FindObjectOfType<AudioManager>().Play("SFX_Enfermera");
             HPplayer.HP += amount;
             Destroy(this.gameObject);
         }

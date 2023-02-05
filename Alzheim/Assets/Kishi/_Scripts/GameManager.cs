@@ -8,9 +8,15 @@ public class GameManager : MonoBehaviour
     public GameObject creditsPlus;
     public bool switchScene = false;
     public Animator animatorCloseCredits;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("MusicMenu");
+        print("Musicamenu");
+    }
     public void Update()
     {
         if (switchScene == true) SceneManager.LoadScene("GameScene");
@@ -18,7 +24,9 @@ public class GameManager : MonoBehaviour
     }
     public void  Play_Button() 
     {
+        FindObjectOfType<AudioManager>().StopSound("MusicMenu");
         loading.gameObject.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 
     public void Credits_Button()

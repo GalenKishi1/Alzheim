@@ -31,6 +31,7 @@ public class ClassPrincipal : MonoBehaviour
 
             if (_isFirstClass == true)
             {
+                FindObjectOfType<AudioManager>().Play("SFX_Class");
                 GameObject go = Instantiate(_newClasses[0]);
                 go.transform.position = _2ndClassesposition[0].transform.position;
                 GameObject go1 = Instantiate(_newClasses[1]);
@@ -41,11 +42,15 @@ public class ClassPrincipal : MonoBehaviour
             }
             else
             {
-                _theOther2ndClass = GameObject.FindGameObjectWithTag("Class");
-                Destroy(_theOther2ndClass);
+                FindObjectOfType<AudioManager>().Play("SFX_Class");
+                GameObject[] _go = GameObject.FindGameObjectsWithTag("Class");
+                for (int i = 0; i < _go.Length; i++)
+                {
+                    Destroy(_go[i], 0.1f);
+                }
             }
             
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,2f);
             
             print(this.gameObject.name);
         }

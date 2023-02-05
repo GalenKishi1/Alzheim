@@ -17,6 +17,8 @@ public class HitDamage : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemiesHP>().ReceiveDamage();
+            FindObjectOfType<AudioManager>().Play("SFX_Attack");
+            
         }
     }
 }

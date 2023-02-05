@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        FindObjectOfType<AudioManager>().Play("MusicGameplay");
     }
 
     void Update()
@@ -26,8 +27,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 _movementdirection = new Vector3 (hor,0,ver);
         _movementdirection.Normalize();
-        print("Hor:" +hor);
-        print("Ver: " +ver);
+
         transform.Translate(_movementdirection * playerClases._speedMovement * Time.deltaTime, Space.World);
         /*if(hor <= 0 && ver <=0)
         {
