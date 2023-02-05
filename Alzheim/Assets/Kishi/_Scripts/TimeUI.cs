@@ -5,7 +5,9 @@ using TMPro;
 
 public class TimeUI : MonoBehaviour
 {
-    Image timeBar;
+    public GameManager gameManager;
+    public TimeUI timeUI;
+    private Image timeBar;
     public GameObject timesUpText;
     public float timeMax;
     private float timeInit = 0f;
@@ -20,7 +22,7 @@ public class TimeUI : MonoBehaviour
 
     void Update()
     {
-        if (timeInit > 0)
+        if (timeInit >= 0)
         {
             timeInit -= Time.deltaTime;
             timeBar.fillAmount = timeInit / timeMax;
@@ -28,11 +30,7 @@ public class TimeUI : MonoBehaviour
         else
         {
             Time.timeScale = 0;
-        }
-
-        if(timeBar.fillAmount == 0)
-        {
-            timeBar.fillAmount = 1;
+            gameManager.switchScene = true;
         }
     }
 }
