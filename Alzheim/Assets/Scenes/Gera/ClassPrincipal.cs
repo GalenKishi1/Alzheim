@@ -12,6 +12,7 @@ public class ClassPrincipal : MonoBehaviour
     [Header("Clases")]
     [SerializeField] private bool _isFirstClass;
     [SerializeField] private GameObject[] _newClasses;
+    [SerializeField] private GameObject[] _otherClasses;
     [SerializeField] private GameObject[] _2ndClassesposition;
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +34,9 @@ public class ClassPrincipal : MonoBehaviour
                 go.transform.position = _2ndClassesposition[0].transform.position;
                 GameObject go1 = Instantiate(_newClasses[1]);
                 go1.transform.position = _2ndClassesposition[1].transform.position;
+
+                Destroy(_otherClasses[0]);
+                Destroy(_otherClasses[1]);
             }
 
             Destroy(this.gameObject);

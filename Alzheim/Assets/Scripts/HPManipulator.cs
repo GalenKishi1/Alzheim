@@ -18,6 +18,7 @@ public class HPManipulator : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            print("pegue");
             currentDamageTime += Time.deltaTime;
             if (currentDamageTime > damageTime)
             {
